@@ -2,8 +2,11 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+      <main className="">
        Django
+
+        <h2 className="text-airbnb">Django and Airbnb</h2>
+
       </main>
      
   );
