@@ -34,7 +34,12 @@ export async function resetAuthCookies(){
     //
     // get data
 
-    export async function getUserId(){
-        const userId = (await cookies()).get('session_userid')?.value
-        return userId ? userId : null;
-    }
+export async function getUserId(){
+    const userId = (await cookies()).get('session_userid')?.value
+    return userId ? userId : null;
+}
+
+export async function getAccessToken(){
+    const accessToken = (await cookies()).get('session_access_token')?.value
+    return accessToken ? accessToken : null;
+}
