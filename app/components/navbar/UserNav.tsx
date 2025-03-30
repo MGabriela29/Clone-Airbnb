@@ -64,7 +64,7 @@ const UserNav: React.FC<UserNavProps>= ({
                                     setIsOpen(false);
                                     router.push('/myfavorites');
                                 }}
-                            />
+                            /> */}
 
                             <MenuLink
                                 label='My reservations'
@@ -72,7 +72,7 @@ const UserNav: React.FC<UserNavProps>= ({
                                     setIsOpen(false);
                                     router.push('/myreservations');
                                 }}
-                            /> */}
+                            />
                                 
                         <LogoutButton />
                         
