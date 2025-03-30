@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import apiService from "@/app/services/apiService";
 import { getUserId } from "@/app/lib/actions";
+import Link from "next/link";
 
 const PropertyDetailPage = async ({params}:{params: {id: string}}) => {  
     const property = await apiService.get(`/api/properties/${params.id}`);
@@ -29,17 +30,19 @@ const PropertyDetailPage = async ({params}:{params: {id: string}}) => {
 
                     <hr />
                     
-                    <div className="mb-6 flex items-center space-x-4">
-                    {property.landlord.avatar_url && (
-                        <Image
-                            src={property.landlord.avatar_url}
-                            width={50}
-                            height={50}
-                            className="rounded-full"
-                            alt="The user" />
-                    )}
-                            <p><strong>{property.landlord.name}</strong> is your host </p>
-                            </div>
+                    <Link 
+                    href={`/landlords/${property.landlord.id}`}
+                    className="mb-6 flex items-center space-x-4">
+                        {property.landlord.avatar_url && (
+                            <Image
+                                src={property.landlord.avatar_url}
+                                width={50}
+                                height={50}
+                                className="rounded-full"
+                                alt="The user" />
+                        )}
+                                <p><strong>{property.landlord.name}</strong> is your host </p>
+                    </Link>
                    
 
                     <hr />
