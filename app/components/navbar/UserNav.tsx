@@ -1,5 +1,6 @@
 'use client';
 
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 import MenuLink from "./MenuLink";
@@ -15,6 +16,7 @@ interface UserNavProps {
 const UserNav: React.FC<UserNavProps>= ({
     userId
 }) => {
+    const router = useRouter();
     const LoginModal = useLoginModal();
     const SignupModal = useSignupModal();
     const [isOpen, setIsOpen] = useState(false);
@@ -40,6 +42,37 @@ const UserNav: React.FC<UserNavProps>= ({
                 <div className="w-[220px] absolute top-[60px] right-0 bg-white border rounded-xl shadow-md flex flex-col cursor-pointer">
                     {userId != null  ? (
                         <>
+                         {/* <MenuLink
+                                label='Inbox'
+                                onClick={() => {
+                                    setIsOpen(false);
+                                    router.push('/inbox');
+                                }}
+                            /> */}
+
+                            <MenuLink
+                                label='My properties'
+                                onClick={() => {
+                                    setIsOpen(false);
+                                    router.push('/myproperties');
+                                }}
+                            />
+
+                            {/* <MenuLink
+                                label='My favorites'
+                                onClick={() => {
+                                    setIsOpen(false);
+                                    router.push('/myfavorites');
+                                }}
+                            />
+
+                            <MenuLink
+                                label='My reservations'
+                                onClick={() => {
+                                    setIsOpen(false);
+                                    router.push('/myreservations');
+                                }}
+                            /> */}
                                 
                         <LogoutButton />
                         
