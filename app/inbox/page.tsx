@@ -1,6 +1,6 @@
 import { getUserId } from "../lib/actions";
 import apiService from "../services/apiService";
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from 'react';
 import Conversation from "../components/inbox/Conversation";
 
 export type UserType = {
@@ -44,4 +44,4 @@ const InboxPage = async () => {
     )
 }
 
-export default InboxPage; 
+export default InboxPage;
