@@ -56,7 +56,7 @@ const apiService = {
         return new Promise((resolve, reject) => {
             fetch(`${process.env.NEXT_PUBLIC_API_HOST}${url}`,{
                 method: 'POST',
-                body:data,
+                body: data,
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
